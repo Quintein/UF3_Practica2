@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UF3Practica2">
+  <ClassDiagramComponents>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="213.0" yPosition="279.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="llibres" type="List&lt;Copia&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getLlibresPrestats" returnType="List&lt;Copia&gt;" visibility="public"/>
+        <Method name="getLlibresReparacio" returnType="List&lt;Copia&gt;" visibility="public"/>
+        <Method name="getLlibresRetard" returnType="List&lt;Copia&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Lectors" package="" visibility="public" xPosition="713.0" yPosition="241.0">
+      <Fields>
+        <Field name="MAXIMLLIBRES" type="int" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
+        <Field name="prestecs" type="List&lt;Copia&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="agafarLlibre" returnType="void" visibility="public">
+          <Argument type="Copia" name="c"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Copia" package="" visibility="public" xPosition="454.0" yPosition="231.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autor" type="Autor" visibility="private"/>
+        <Field name="estat" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="799.0" yPosition="41.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataNaixement" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Autor" package="" visibility="public" xPosition="921.0" yPosition="241.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Lectors" target="Persona"/>
+    <IsRelation name="is" source="Autor" target="Persona"/>
+    <UseRelation name="" source="Lectors" target="Copia" sourceCardinality="1..1" targetCardinality="1..*"/>
+    <HasRelation name="Conté" source="Biblioteca" target="Copia" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
